@@ -1,1 +1,3 @@
-/*Write all of your CSS here*/
+form > input {
+    display: block;
+}

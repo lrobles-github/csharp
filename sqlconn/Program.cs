@@ -7,8 +7,8 @@ namespace DbConnection
     public class DbConnector
     {
         static string server = "localhost";
-        static string db = "csharp"; //Change to your schema name
-        static string port = "8889"; //Potentially 8889
+        static string db = "users_schema";
+        static string port = "8889";
         static string user = "root";
         static string pass = "root";
         internal static IDbConnection Connection {

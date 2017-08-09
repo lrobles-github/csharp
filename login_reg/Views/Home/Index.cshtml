@@ -1,12 +1,25 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<h1>Login / Registration</h1>
 
 
-<form action="validate" method="POST">
-    <input type="text" name="first_name">
-    <input type="text" name="last_name">
-    <input type="email" name="email">
-    <input type="submit">
+
+<h1>Registration</h1>
+
+<form action="validate-registration" method="POST">
+    First Name: <input type="text" name="first_name">
+    Last Name: <input type="text" name="last_name">
+    Email: <input type="email" name="email">
+    Password: <input type="password" name="email">
+    Confirm Password: <input type="password" name="email-confirm">
+    <input type="submit" value="Register">
+</form>
+
+
+<h2>Login</h2>
+
+<form action="validate-login" method="POST">
+    Email: <input type="email" name="email">
+    Password: <input type="password" name="email">
+    <input type="submit" value="Login">
 </form>
