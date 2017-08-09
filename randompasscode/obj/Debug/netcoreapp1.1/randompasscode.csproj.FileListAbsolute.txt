@@ -1,0 +1,8 @@
+/Users/Luis/Documents/CodingDojo/assignments/netCore/randompasscode/bin/Debug/netcoreapp1.1/randompasscode.deps.json
+/Users/Luis/Documents/CodingDojo/assignments/netCore/randompasscode/bin/Debug/netcoreapp1.1/randompasscode.runtimeconfig.json
+/Users/Luis/Documents/CodingDojo/assignments/netCore/randompasscode/bin/Debug/netcoreapp1.1/randompasscode.runtimeconfig.dev.json
+/Users/Luis/Documents/CodingDojo/assignments/netCore/randompasscode/bin/Debug/netcoreapp1.1/randompasscode.dll
+/Users/Luis/Documents/CodingDojo/assignments/netCore/randompasscode/bin/Debug/netcoreapp1.1/randompasscode.pdb
+/Users/Luis/Documents/CodingDojo/assignments/netCore/randompasscode/obj/Debug/netcoreapp1.1/randompasscode.AssemblyInfo.cs
+/Users/Luis/Documents/CodingDojo/assignments/netCore/randompasscode/obj/Debug/netcoreapp1.1/randompasscode.dll
+/Users/Luis/Documents/CodingDojo/assignments/netCore/randompasscode/obj/Debug/netcoreapp1.1/randompasscode.pdb

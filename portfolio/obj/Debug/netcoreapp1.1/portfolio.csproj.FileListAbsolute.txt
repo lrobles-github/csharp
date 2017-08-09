@@ -1,0 +1,8 @@
+/Users/Luis/Documents/CodingDojo/assignments/netCore/portfolio/bin/Debug/netcoreapp1.1/portfolio.deps.json
+/Users/Luis/Documents/CodingDojo/assignments/netCore/portfolio/bin/Debug/netcoreapp1.1/portfolio.runtimeconfig.json
+/Users/Luis/Documents/CodingDojo/assignments/netCore/portfolio/bin/Debug/netcoreapp1.1/portfolio.runtimeconfig.dev.json
+/Users/Luis/Documents/CodingDojo/assignments/netCore/portfolio/bin/Debug/netcoreapp1.1/portfolio.dll
+/Users/Luis/Documents/CodingDojo/assignments/netCore/portfolio/bin/Debug/netcoreapp1.1/portfolio.pdb
+/Users/Luis/Documents/CodingDojo/assignments/netCore/portfolio/obj/Debug/netcoreapp1.1/portfolio.AssemblyInfo.cs
+/Users/Luis/Documents/CodingDojo/assignments/netCore/portfolio/obj/Debug/netcoreapp1.1/portfolio.dll
+/Users/Luis/Documents/CodingDojo/assignments/netCore/portfolio/obj/Debug/netcoreapp1.1/portfolio.pdb

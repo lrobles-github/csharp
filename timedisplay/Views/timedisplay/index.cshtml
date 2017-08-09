@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h2>Current Time and Date:</h2>
+
+
+    @{  DateTime date = DateTime.Now; 
+
+        string dateString = String.Format("{0:MMM d, yyyy}", date);
+        string timeString = String.Format("{0:hh:mm tt}", date);
+
+    }
+
+    <h1>@dateString</h1>
+    <h1>@timeString</h1>
+
+</body>
+</html>

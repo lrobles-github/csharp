@@ -1,0 +1,79 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Dojodachi</h1>
+
+<h4>happiness: @ViewBag.Dojodachi.happiness</h4>
+<h4>fullness: @ViewBag.Dojodachi.fullness</h4>
+<h4>meals: @ViewBag.Dojodachi.meals</h4>
+<h4>energy: @ViewBag.Dojodachi.energy</h4>
+
+@{ 
+    if(ViewBag.GameStatus == "active")
+    {
+        <div class="game-buttons">
+            <form id="feed-form" action="/game" method="POST">
+                <input type="hidden" value="feed" name="move">
+                <input type="button" value="Feed" id="feed-button">
+            </form>
+
+            <form id="play-form" action="/game" method="POST">
+                <input type="hidden" value="play" name="move">    
+                <input type="button" value="Play" id="play-button">
+            </form>
+
+            <form id="work-form" action="/game" method="POST">
+                <input type="hidden" value="work" name="move">  
+                <input type="button" value="Work" id="work-button">
+            </form>
+
+            <form id="sleep-form" action="/game" method="POST">
+                <input type="hidden" value="sleep" name="move">  
+                <input type="button" value="Sleep" id="sleep-button">
+            </form>
+        </div>
+
+    }
+    else if(ViewBag.GameStatus == "over")
+    {
+        <div>
+            <form action="/reset" method="POST">
+                <input type="submit" value="Reset" name="reset">
+            </form>
+        </div>
+    }
+}
+
+<div class="image-area">
+    @{
+        if (ViewBag.Image == "sleep")
+        {
+            <img src="~/images/sleep.jpg">
+        }
+        else if (ViewBag.Image == "dead")
+        {
+            <img src="~/images/dead.jpg">
+        }
+        else if (ViewBag.Image == "sad")
+        {
+            <img src="~/images/sad.jpg">
+        }
+        else if (ViewBag.Image == "eat")
+        {
+            <img src="~/images/eat.jpg">
+        }
+        else 
+        {
+            <img src="~/images/play.jpg">
+        }
+    }
+
+</div>
+
+<p>@ViewBag.displayString</p>
+<p>@ViewBag.Message</p>
+
+
+
+

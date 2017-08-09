@@ -1,0 +1,8 @@
+/Users/Luis/Documents/CodingDojo/assignments/netCore/deckOfCards/bin/Debug/netcoreapp1.1/deckOfCards.deps.json
+/Users/Luis/Documents/CodingDojo/assignments/netCore/deckOfCards/bin/Debug/netcoreapp1.1/deckOfCards.runtimeconfig.json
+/Users/Luis/Documents/CodingDojo/assignments/netCore/deckOfCards/bin/Debug/netcoreapp1.1/deckOfCards.runtimeconfig.dev.json
+/Users/Luis/Documents/CodingDojo/assignments/netCore/deckOfCards/obj/Debug/netcoreapp1.1/deckOfCards.AssemblyInfo.cs
+/Users/Luis/Documents/CodingDojo/assignments/netCore/deckOfCards/bin/Debug/netcoreapp1.1/deckOfCards.dll
+/Users/Luis/Documents/CodingDojo/assignments/netCore/deckOfCards/bin/Debug/netcoreapp1.1/deckOfCards.pdb
+/Users/Luis/Documents/CodingDojo/assignments/netCore/deckOfCards/obj/Debug/netcoreapp1.1/deckOfCards.dll
+/Users/Luis/Documents/CodingDojo/assignments/netCore/deckOfCards/obj/Debug/netcoreapp1.1/deckOfCards.pdb

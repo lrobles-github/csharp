@@ -1,0 +1,8 @@
+/Users/Luis/Documents/CodingDojo/assignments/netCore/sqlconn/bin/Debug/netcoreapp1.1/sqlconn.deps.json
+/Users/Luis/Documents/CodingDojo/assignments/netCore/sqlconn/bin/Debug/netcoreapp1.1/sqlconn.runtimeconfig.json
+/Users/Luis/Documents/CodingDojo/assignments/netCore/sqlconn/bin/Debug/netcoreapp1.1/sqlconn.runtimeconfig.dev.json
+/Users/Luis/Documents/CodingDojo/assignments/netCore/sqlconn/obj/Debug/netcoreapp1.1/sqlconn.AssemblyInfo.cs
+/Users/Luis/Documents/CodingDojo/assignments/netCore/sqlconn/bin/Debug/netcoreapp1.1/sqlconn.dll
+/Users/Luis/Documents/CodingDojo/assignments/netCore/sqlconn/bin/Debug/netcoreapp1.1/sqlconn.pdb
+/Users/Luis/Documents/CodingDojo/assignments/netCore/sqlconn/obj/Debug/netcoreapp1.1/sqlconn.dll
+/Users/Luis/Documents/CodingDojo/assignments/netCore/sqlconn/obj/Debug/netcoreapp1.1/sqlconn.pdb
