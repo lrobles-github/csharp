@@ -1,0 +1,30 @@
+@model WeddingPlanner.Models.Wedding
+
+
+<h3 class="display1">Wedding</h3>
+<br>
+<br>
+
+<h4 class="display2"> Date: </h4>
+    <ul><li>@Model.Date.ToString("MMMM dd, yyyy")</li></ul>
+<h4 class="display2"> Guests:</h4>
+
+<ul>
+    @{
+        if (@Model.Guests.Count == 0) 
+        {
+            <li>No guests yet...</li>
+        }
+        else 
+        {
+            foreach(var g in @Model.Guests)
+            {
+                <li>@g.User.FirstName @g.User.LastName</li>
+            }
+        }
+    }
+</ul>
+
+<div>     
+    @Html.Partial("_mapPartial")
+</div>

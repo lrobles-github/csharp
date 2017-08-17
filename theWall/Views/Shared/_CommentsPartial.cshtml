@@ -1,0 +1,22 @@
+
+@model theWall.Models.Comment
+
+    foreach (var comment in ViewBag.Comments)
+    {
+        <div>
+            <blockquote class="blockquote">
+                <p class="mb-0">@comment["comment"]</p>
+                <footer class="blockquote-footer">Brandon Austin, <cite title="Source Title">2/3/17</cite></footer>
+            </blockquote>
+        </div>
+        <div>
+            <form asp-controller="Wall" asp-action="Comment" asp-route-messageid="@message["id"]" method="POST">
+                <div class="form-group row">
+                    <div class="col-10">
+                        <input class="form-control" type="textarea" name="comment">
+                        <input type="submit" value="Comment">
+                    </div>
+                </div>
+            </form>
+        </div>
+    } 

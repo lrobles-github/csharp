@@ -1,0 +1,49 @@
+@model WeddingPlanner.Models.Wedding
+
+<h3 class="display1">Create Wedding</h3>
+<br>
+<br>
+
+<div>
+    <form asp-controller="Wedding" asp-action="add" method="POST">
+
+        <div class="form-group row">
+            <label asp-for="FirstName" class="col-2 col-form-label">Victim One</label>
+            <div class="col-10">
+                <input class="form-control" type="text" asp-for="FirstName">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="SecondName" class="col-2 col-form-label">Victim Two</label>
+            <div class="col-10">
+                <input class="form-control" type="text" asp-for="SecondName">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Date" class="col-2 col-form-label">Date</label>
+            <div class="col-10">
+                <input class="form-control" type="date" min="@ViewBag.Today" asp-for="Date">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Address" class="col-2 col-form-label">Address</label>
+            <div class="col-10">
+                <input class="form-control" type="address" asp-for="Address">
+            </div>
+            <div class="form-group">
+                <small class="form-text text-muted">Address must be properly formatted as House Number, Street Direction, Street Name, Street Suffix, City, State, Zip, Country.</small>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        
+        <div asp-validation-summary="All">
+            @ViewBag.DateError
+        </div>
+
+    </form>
+
+</div>

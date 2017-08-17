@@ -13,28 +13,30 @@
     Password: <input type="password" name="password">
     Confirm Password: <input type="password" name="password_confirm">
     <input type="submit" value="Register">
-</form>
-
-<div>
+    <div>
     @{
+        <p>@ViewBag.EmailError</p>
+
         foreach (var error in ViewBag.errors)
         {
-            //If there are any errors for a field...
             if(@error.Errors.Count > 0)
             {
-                // We show the first error for that field
                 <p>@error.Errors[0].ErrorMessage</p>
             }
         }
     }
-</div>
+    </div>
+</form>
+
+
 
 
 <h2>Login</h2>
 
-<form action="validate_login" method="POST">
+<form action="login" method="POST">
     Email: <input type="email" name="email">
-    Password: <input type="password" name="email">
+    Password: <input type="password" name="password">
     <input type="submit" value="Login">
 </form>
 
+    <p>@ViewBag.LoggedIn</p>

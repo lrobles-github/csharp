@@ -1,0 +1,62 @@
+@model WeddingPlanner.Models.Wedding
+
+<h3 class="display1">Wedding Dashboard</h3>
+<br>
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Wedding</th>
+      <th>Date</th>
+      <th># of Guests</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @{ 
+        @foreach(var w in ViewBag.AllWeddings) 
+        {
+          bool Creator = false;
+          bool Going = false;
+
+          @if (ViewBag.UserId == w.UserId)
+          { 
+            Creator = true; 
+          }
+          @foreach (var g in w.Guests)
+          {
+            if (g.UserId == ViewBag.UserId){ Going = true; }
+          }
+
+          <tr>
+            <td><a href="show/@w.Id">@w.FirstName & @w.SecondName<a/></td>
+            <td>@w.Date.ToString("MMMM dd, yyyy")</td>
+            <td>@w.Guests.Count</td>
+            @if (@Creator && @Going)
+            {
+              <td><a href="/delete/@w.Id">Delete</a> - <a href="/notattend/@w.Id">Cannot Attend</a></td>
+            }
+            else if (@Creator && !@Going)
+            {
+              <td><a href="/delete/@w.Id">Delete</a> - <a href="/attend/@w.Id">RSVP</a></td>
+            }
+            else if (!@Creator && @Going)
+            {
+              <td><a href="/notattend/@w.Id">Cannot Attend</a></td>
+            }
+            else if (!@Creator && !@Going)
+            {
+              <td><a href="/attend/@w.Id">RSVP</a></td>
+            }
+            else
+            {
+              <td>error</td>
+            }
+          </tr>
+        }
+      }
+  </tbody>
+</table>
+
+<a class="btn btn-primary" href="/add" role="button">New Wedding ...</a>

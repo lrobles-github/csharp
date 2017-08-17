@@ -22,7 +22,7 @@ namespace login_reg.Controllers
         [Route("")]
         public IActionResult Index()
         {
-            ViewBag.errors = ModelState.Values;
+            ViewBag.errors = new List<string>();
             return View();
         }
 
@@ -30,9 +30,17 @@ namespace login_reg.Controllers
         // POST: /create-registration
         [HttpPost]
         [Route("register")]
-        public IActionResult create(User user)
+        public IActionResult register(User user)
         {
-            if (ModelState.IsValid)
+
+            List<Dictionary<string, object>> CheckEmail= _dbConnector.Query("SELECT * from users WHERE email = '" + user.email + "'");
+
+            if (CheckEmail.Count > 0)
+            {
+                ViewBag.EmailError= "User already exists.";
+            }
+
+            else if (ModelState.IsValid && CheckEmail.Count == 0)
             {
                 _dbConnector.Execute("INSERT INTO users (first_name, last_name, email, password) VALUES ('" + user.first_name + "', '" + user.last_name + "', '" + user.email + "', '" + user.password + "')");
                 List<Dictionary<string, object>> AllUsers = _dbConnector.Query("SELECT * FROM users");
@@ -42,46 +50,33 @@ namespace login_reg.Controllers
                     System.Console.WriteLine("########################" + cell["id"] + " " + cell["first_name"] + " " + cell["last_name"] + " " + cell["email"]);
                 }
             };
-            // TryValidateModel(NewUser);
+
+            // TryValidateModel(user);
             ViewBag.errors = ModelState.Values;
-            return View();
+            return View("Index");
         }
 
+        [HttpPost]
+        [Route("login")]
+        public IActionResult login(string email, string password)
+        {
 
+            ViewBag.LoggedIn = false;
 
-        // // POST: /validate-registration
-        // [HttpPost]
-        // [Route("validate_registration")]
-        // public IActionResult validate_registration(string first_name, string last_name, string email, string password, string password_confirm)
-        // {
-        //     User NewUser = new User
-        //     {
-        //         first_name = first_name,
-        //         last_name = last_name,
-        //         email = email,
-        //         password = password
-        //     };
-        //     TryValidateModel(NewUser);
-        //     ViewBag.errors = ModelState.Values;
-        //     return View();
-        // }
+            List<Dictionary<string, object>> CheckPw = _dbConnector.Query("SELECT password FROM users WHERE email = '" + email + "'");
+            
+            System.Console.WriteLine("#########################" + CheckPw[0]["password"] + " is " + password);
 
+            if (CheckPw.Count > 0 && CheckPw[0]["password"].Equals(password))  
+            {
+                ViewBag.LoggedIn = true;
+                System.Console.WriteLine("##################### Match!");
+                return RedirectToAction("Index");
+            }
 
+            return RedirectToAction("Index");
+        }
 
-        // // POST: /validate-registration
-        // [HttpPost]
-        // [Route("validate-registration")]
-        // public IActionResult register(string first_name, string last_name, string email, string password) 
-        // {
-        //     // DbConnector.Execute("INSERT INTO users (first_name, last_name, email, password) VALUES ('" + first_name + "', '" + last_name + "', '" + email + "', '" + password + "')");
-        //     // List<Dictionary<string, object>> AllUsers = DbConnector.Query("SELECT * FROM users");
-
-        //     // foreach (var cell in AllUsers)
-        //     // {
-        //     //     System.Console.WriteLine("########################" + cell["id"] + " " + cell["first_name"] + " " + cell["last_name"] + " " + cell["email"]);
-        //     // }
-
-        //     return RedirectToAction("Index");
-        // }
     }
+
 }

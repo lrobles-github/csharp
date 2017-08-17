@@ -7,8 +7,6 @@ using Microsoft.Extensions.Logging;
 
 
 
-
-
 namespace login_reg
 {
     public class Startup

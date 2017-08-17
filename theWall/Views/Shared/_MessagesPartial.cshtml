@@ -1,0 +1,11 @@
+@using theWall.Models
+@model theWall.Models.Message
+
+
+@{ 
+    foreach (var message in @ViewBag.Messages) 
+    {
+        <p class="lead">
+            @message["message"] -- <small>@message["name"], @message["date"] </small>
+        </p>
+    }

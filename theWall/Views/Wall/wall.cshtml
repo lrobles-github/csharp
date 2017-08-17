@@ -1,0 +1,23 @@
+@using theWall.Models
+@model theWall.Models.ViewBundle
+
+<br>
+<br>
+<br>
+<br>
+<br> 
+
+
+
+
+
+@Html.Partial("_MessagesPartial", @Model.MessageModel)
+
+@foreach(var comment in @Model.CommentModels)
+{
+    @Html.Partial("_CommentsPartial", @comment)
+}
+
+
+
+
