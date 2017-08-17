@@ -63,15 +63,15 @@ namespace WeddingPlanner.Controllers
         [Route("add")]
         public IActionResult Add(WeddingViewModel wedding)
         {
-            System.Console.WriteLine(wedding.FirstName, wedding.SecondName, wedding.Date, wedding.Address);
             int x = (int)HttpContext.Session.GetInt32("UserId");
             System.Console.WriteLine(", " + x);
             System.Console.WriteLine(wedding.Date.GetType() + " ====== " + DateTime.Now.GetType());
             System.Console.WriteLine("############# ModelState.IsValid?" + ModelState.IsValid);
-
+            
             if (wedding.Date < DateTime.Now)
             {
                 ViewBag.DateError = "Date must be in the future.";
+                ViewBag.Today = DateTime.Now.ToString("yyyy-MM-dd");
                 return View("add");
             }
             else if (ModelState.IsValid)
